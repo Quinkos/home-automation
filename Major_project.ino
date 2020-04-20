@@ -5,31 +5,31 @@
  *  For any further doubts or inquiries contact at "parthsvas@gmail.com"
  */ 
 
-          // Loading the library needed to run the LCD Display
+  // Loading the library needed to run the LCD Display
 #include <LiquidCrystal.h>
 
-          // Creating variables for pin numbers to increse understanding of the code
+  // Creating variables for pin numbers to increse understanding of the code
 int r1 = 6;
 int r2 = 5;
 int spk = 4;
 int led = 3;
 int sensor = 2;
 char data = 0;
-          // Assigning different pins of the LCD Display to different pins for output
+  // Assigning different pins of the LCD Display to different pins for output
 int rs = 7, en = 8, d4 = 9, d5 = 10, d6 = 11, d7 = 12;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 void setup()
 {
-          // Seting the baud rate for serial data transmission
+    // Seting the baud rate for serial data transmission
   Serial.begin(9600);
-          // Setting the pins according to their I/O requirement
+    // Setting the pins according to their I/O requirement
   pinMode(2, INPUT);
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
-          // Printing a message on the LCD Display
+    // Printing a message on the LCD Display
   lcd.begin(16, 2);
   lcd.setCursor(0, 0);
   lcd.print("CSE Diploma 6th");
@@ -48,7 +48,7 @@ void loop()
     lcd.setCursor(2, 0);
     lcd.print("BT Connected");
   }
-          // Setting up a Switch-Case statement for the various inputs to their actions and printing a notification on the LCD Display
+    // Setting up a Switch-Case statement for the various inputs to their actions and printing a notification on the LCD Display
   switch (data)
   {
     case 'a':
@@ -82,7 +82,7 @@ void loop()
       digitalWrite(spk, LOW);
       break;
   }
-          // Setting up the PIR Sensor to respond to any motion
+    // Setting up the PIR Sensor to respond to any motion
   int sensorval = digitalRead(sensor);
   Serial.println(sensorval);
 
